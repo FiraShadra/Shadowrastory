@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Shadowra's Story
+Comment=A survival metroidvania about a little dark dragoness
+Comment[de]=Ein Survival-Metroidvania über eine kleine Finsternis-Drachin
+Exec=AppRun
+Icon=shadowras-story
+Categories=Game;ActionGame;
+Terminal=false

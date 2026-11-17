@@ -1,0 +1,43 @@
+{
+  "_doc": {
+    "about": "Extra morals for Shadowra. Add a new entry to 'morals' and restart the game – no code needed. The game copies these definitions into the database table 'moral_defs' (saves/shadowra.db) and stores Shadowra's value of each moral per save in 'moral_values'.",
+    "key": "unique id, lowercase letters/digits/underscore, never change it after release (saves use it)",
+    "name": "shown name per language: {\"de\": ..., \"en\": ...}",
+    "description": "what it means / does, per language",
+    "level": "'basic' or 'advanced'. Advanced morals are hard-limited by the game to at most 3 points (FSK 12 version), whatever 'max' says.",
+    "ages": "at which ages it can be gained: any of 'hatchling', 'juvenile', 'adult'",
+    "max": "highest value (whole number, 1 or more)",
+    "gain": "which game events raise it and by how much, e.g. {\"cozy_meal\": 1}. Events: see 'events' below.",
+    "effects": "list of bonuses/penalties unlocked when the value reaches 'at': {\"at\": 3, \"good\": true, \"name\": {...}, \"description\": {...}, \"mods\": {\"food_heal\": 1.1}}. Mods: see 'mods' below (1.0 = unchanged, 1.1 = +10 %, 0.9 = -10 %; 'flee' is added in pixels).",
+    "limit_line": "optional: what Shadowra says to the player (walking up to the camera) when an event would raise the moral past its max. Without it, she just stops gaining.",
+    "events": {
+      "cozy_meal": "eating at an altar curled up around the food at her side",
+      "rest": "eating or sleeping at a nest / altar",
+      "kindness": "kind deeds: talking to Morwen, sparing Mafor, hugs that are accepted",
+      "affection": "hugs and cozy meals that bring her closer to others",
+      "hunt_ground": "killing / drinking from creatures on the ground",
+      "hunt_air": "hunting from the air",
+      "sleepless": "staying awake far too long",
+      "horror": "abhorrent deeds",
+      "greed": "drinking blood while she has plenty of mana",
+      "wanting": "drinking the blood of priests",
+      "overflow": "drinking with full mana, devouring Mafor's light"
+    },
+    "mods": {
+      "stam_cost": "stamina cost of running, flying, dashing",
+      "max_stam": "maximum stamina",
+      "stam_regen": "stamina regeneration",
+      "mana_cost": "mana cost of spells",
+      "veil_drain": "mana burned by the Shadow Veil in light",
+      "food_heal": "healing from food",
+      "claw_dmg": "claw damage",
+      "blood_gain": "mana from blood",
+      "max_mana": "maximum mana",
+      "sleep_mana": "mana restored by sleep",
+      "flee": "how early peaceful creatures flee (pixels, added)"
+    }
+  },
+  "morals": [
+    
+  ]
+}

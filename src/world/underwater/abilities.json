@@ -1,0 +1,15 @@
+{
+  "region": "underwater",
+  "abilities": [
+    {
+      "key": "deep_breath",
+      "name": {"de": "Tiefenatem", "en": "Deep Breath"},
+      "description": {"de": "Die Tiefenperle: sie hält den Atem unter Wasser zweieinhalbmal so lange.",
+                      "en": "The Deep Pearl: she holds her breath under water two and a half times as long."},
+      "learn": "relic",
+      "learned_from": {"de": "Am Grund unter dem Frostsee.", "en": "At the bottom below the frozen lake."},
+      "color": [80, 170, 210],
+      "ages": ["juvenile", "adult"]
+    }
+  ]
+}

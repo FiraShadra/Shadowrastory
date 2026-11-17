@@ -1,0 +1,23 @@
+{
+  "region": "scave",
+  "abilities": [
+    {
+      "key": "glide",
+      "name": {"de": "Gleiten", "en": "Gliding"},
+      "description": {"de": "Leertaste in der Luft halten: sie segelt langsam nach unten – und in warmen Aufwinden nach oben.",
+                      "en": "Hold Space in the air: she sails slowly down – and up in warm updrafts."},
+      "learn": "watch",
+      "learned_from": {"de": "Den Schattenvögeln im Nest zusehen.", "en": "Watching the shadow birds in the nest."},
+      "ages": ["hatchling", "juvenile", "adult"]
+    },
+    {
+      "key": "blood",
+      "name": {"de": "Blut-Sog", "en": "Blood Drain"},
+      "description": {"de": "U nahe einem geschwächten oder gefallenen Wesen: Blut schenkt Mana. Sie hasst es.",
+                      "en": "U near a weakened or fallen creature: blood gives mana. She hates it."},
+      "learn": "instinct",
+      "learned_from": {"de": "Ein Instinkt, der erwacht, wenn sie schwer verletzt ist.", "en": "An instinct that wakes when she is badly hurt."},
+      "ages": ["hatchling", "juvenile", "adult"]
+    }
+  ]
+}

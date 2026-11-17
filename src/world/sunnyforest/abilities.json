@@ -1,0 +1,14 @@
+{
+  "region": "sunnyforest",
+  "abilities": [
+    {
+      "key": "light_tolerance",
+      "name": {"de": "Lichtgewöhnung", "en": "Light Tolerance"},
+      "description": {"de": "Jede Sekunde im Sonnenlicht härtet ihre Schuppen ab: das Licht brennt weniger, der Schleier frisst weniger Mana.",
+                      "en": "Every second in sunlight hardens her scales: light burns less, the veil eats less mana."},
+      "learn": "trait",
+      "learned_from": {"de": "Wächst im Tageslicht der Sonnenwiesen und des Tals.", "en": "Grows in the daylight of the meadows and the vale."},
+      "ages": ["hatchling", "juvenile", "adult"]
+    }
+  ]
+}

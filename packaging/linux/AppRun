@@ -1,0 +1,5 @@
+#!/bin/sh
+# Entry point of the AppImage: start the frozen game. ($APPIMAGE – the path of the .AppImage file –
+# is set by the AppImage runtime; the game puts its saves next to it, or in ~/.local/share.)
+HERE="$(dirname "$(readlink -f "$0")")"
+exec "$HERE/usr/bin/ShadowraS/ShadowraS" "$@"

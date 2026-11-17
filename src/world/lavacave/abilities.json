@@ -1,0 +1,15 @@
+{
+  "region": "lavacave",
+  "abilities": [
+    {
+      "key": "ash_wings",
+      "name": {"de": "Aschenschwingen", "en": "Ash Wings"},
+      "description": {"de": "Ihre Flügel sind die Glut gewohnt: die Hitze über der Lava zehrt nur noch halb so stark an ihrer Ausdauer.",
+                      "en": "Her wings are used to the embers: the heat above the lava drains only half as much stamina."},
+      "learn": "trait",
+      "learned_from": {"de": "Wenn sie das Lavameer zum ersten Mal überquert hat und an der Letzten Rast ruht.",
+                       "en": "When she has crossed the Lava Sea for the first time and rests at the Last Rest."},
+      "ages": ["adult"]
+    }
+  ]
+}

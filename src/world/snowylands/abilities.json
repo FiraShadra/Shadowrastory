@@ -1,0 +1,14 @@
+{
+  "region": "snowylands",
+  "abilities": [
+    {
+      "key": "dive",
+      "name": {"de": "Tauchen", "en": "Diving"},
+      "description": {"de": "In tiefem Eiswasser S halten: sie taucht hinab. Ihr Atem reicht nicht ewig – Luftblasen unter dem Eis helfen.",
+                      "en": "Hold S in deep ice water: she dives down. Her breath doesn't last forever – air pockets under the ice help."},
+      "learn": "watch",
+      "learned_from": {"de": "Den Ottern am Loch im Frostsee zusehen.", "en": "Watching the otters at the hole in the frozen lake."},
+      "ages": ["juvenile", "adult"]
+    }
+  ]
+}

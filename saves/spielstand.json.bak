@@ -1,0 +1,186 @@
+{
+ "player": {
+  "stage": 2,
+  "x": 8473.0,
+  "y": 434,
+  "hp": 90,
+  "mana": 152.41699097805923,
+  "stamina": 120.0,
+  "abilities": [
+   "fire",
+   "flight_seen",
+   "glide",
+   "obsidian",
+   "veil"
+  ],
+  "food": {
+   "milk": 5,
+   "fish": 6,
+   "meat": 0
+  },
+  "awake_time": 0.0,
+  "hunger_time": 72.8340000000003,
+  "facing": -1,
+  "mana_spent": 638.8959999999967
+ },
+ "morality": {
+  "wild": 5.0,
+  "madness": 0.0,
+  "lust": 0.0,
+  "abhorrent": 0,
+  "blood_count": 0,
+  "boss_choice": null,
+  "deeds": {
+   "hunt_ground": 5.0,
+   "hunt_air": 0.0,
+   "sleepless": 0.0,
+   "horror": 0.0,
+   "greed": 0.0,
+   "wanting": 0.0,
+   "overflow": 0.0,
+   "rest": 28.0,
+   "kindness": 6.5,
+   "affection": 2.5
+  }
+ },
+ "checkpoint": "A3",
+ "world": {
+  "broken": [
+   [
+    192,
+    17
+   ],
+   [
+    192,
+    16
+   ],
+   [
+    192,
+    15
+   ],
+   [
+    192,
+    14
+   ],
+   [
+    192,
+    13
+   ],
+   [
+    192,
+    12
+   ],
+   [
+    192,
+    11
+   ],
+   [
+    192,
+    10
+   ],
+   [
+    192,
+    9
+   ],
+   [
+    192,
+    8
+   ]
+  ],
+  "burned": [
+   [
+    222,
+    16
+   ],
+   [
+    222,
+    15
+   ],
+   [
+    222,
+    14
+   ],
+   [
+    222,
+    13
+   ],
+   [
+    222,
+    12
+   ],
+   [
+    222,
+    11
+   ],
+   [
+    222,
+    10
+   ],
+   [
+    222,
+    9
+   ],
+   [
+    222,
+    8
+   ],
+   [
+    222,
+    17
+   ]
+  ],
+  "picked": [
+   "c_canyon",
+   "c_grove",
+   "c_lava1",
+   "c_lava2",
+   "c_moon",
+   "c_secret",
+   "fire",
+   "obsidian",
+   "veil"
+  ],
+  "stock": {
+   "N": {
+    "milk": 0
+   },
+   "M": {
+    "milk": 0
+   },
+   "A1": {
+    "fish": 0
+   },
+   "E": {
+    "fish": 0,
+    "meat": 0
+   },
+   "A2": {
+    "fish": 0,
+    "meat": 3
+   },
+   "A3": {
+    "meat": 0
+   },
+   "A4": {
+    "meat": 0
+   }
+  },
+  "flags": [
+   "birds",
+   "grove_done",
+   "grove_friends",
+   "intro",
+   "owl_gift",
+   "owl_talked",
+   "storm"
+  ],
+  "t": 649.4660000001215,
+  "hugs": {
+   "deer0": 1,
+   "owl": 1,
+   "deer1": 1,
+   "deer3": 1,
+   "sera": 1
+  }
+ }
+}

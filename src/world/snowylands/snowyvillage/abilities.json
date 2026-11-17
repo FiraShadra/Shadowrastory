@@ -1,0 +1,14 @@
+{
+  "region": "snowyvillage",
+  "abilities": [
+    {
+      "key": "hearth_blessing",
+      "name": {"de": "Herdsegen", "en": "Hearth Blessing"},
+      "description": {"de": "Gunnar teilt die Wärme des Dorfherds mit ihr: die Kälte zehrt nur noch halb so stark an ihr.",
+                      "en": "Gunnar shares the warmth of the village hearth with her: the cold wears her down only half as much."},
+      "learn": "gift",
+      "learned_from": {"de": "Ein Geschenk des Dorfältesten Gunnar – nur wenn die Menschen ihr vertrauen.", "en": "A gift from Gunnar, the village elder – only if the humans trust her."},
+      "ages": ["juvenile", "adult"]
+    }
+  ]
+}

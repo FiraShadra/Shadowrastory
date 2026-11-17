@@ -1,0 +1,15 @@
+{
+  "region": "icecave",
+  "abilities": [
+    {
+      "key": "frost_scales",
+      "name": {"de": "Frostschuppen", "en": "Frost Scales"},
+      "description": {"de": "Das Frostherz härtet ihre Schuppen gegen die Kälte: Schnee und Eiswasser zehren nicht mehr an ihr.",
+                      "en": "The Frost Heart hardens her scales against the cold: snow and ice water no longer wear her down."},
+      "learn": "relic",
+      "learned_from": {"de": "Das Frostherz hinter der Eiswand der Eishöhle (Finsternis-Flamme).", "en": "The Frost Heart behind the ice wall of the ice cave (Dark Flame)."},
+      "color": [120, 200, 240],
+      "ages": ["juvenile", "adult"]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "region": "lowrow",
+  "abilities": [
+    {
+      "key": "flight_seen",
+      "name": {"de": "Fliegen", "en": "Flying"},
+      "description": {"de": "Leertaste in der Luft: ein Flügelschlag. Kostet viel Ausdauer – erst ausgewachsen trägt es sie.",
+                      "en": "Space in the air: a wingbeat. Costs a lot of stamina – only a grown dragoness can fly."},
+      "learn": "watch",
+      "learned_from": {"de": "Dem Sturmdrachen über der Klippe zusehen.", "en": "Watching the storm dragon above the cliff."},
+      "ages": ["adult"]
+    },
+    {
+      "key": "veil",
+      "name": {"de": "Schattenschleier", "en": "Shadow Veil"},
+      "description": {"de": "Eine Hülle aus Finsternis schützt sie im Licht – und frisst dabei ständig Mana.",
+                      "en": "A shroud of darkness protects her in the light – and constantly eats mana."},
+      "learn": "relic",
+      "learned_from": {"de": "Auf der Klippe der Stürme.", "en": "On the Cliff of Storms."},
+      "color": [120, 60, 200],
+      "ages": ["hatchling", "juvenile", "adult"]
+    },
+    {
+      "key": "obsidian",
+      "name": {"de": "Obsidian-Klauen", "en": "Obsidian Claws"},
+      "description": {"de": "Krallen aus schwarzem Glas: sie schneiden tiefer und zertrümmern brüchigen Stein.",
+                      "en": "Claws of black glass: they cut deeper and shatter brittle stone."},
+      "learn": "relic",
+      "learned_from": {"de": "In den Ruinen des Lichts.", "en": "In the Ruins of Light."},
+      "color": [150, 30, 50],
+      "ages": ["hatchling", "juvenile", "adult"]
+    },
+    {
+      "key": "fire",
+      "name": {"de": "Finsternis-Flamme", "en": "Dark Flame"},
+      "description": {"de": "I halten: dunkles Feuer verbrennt Ranken und schmilzt Eis. Kostet Mana.",
+                      "en": "Hold I: dark fire burns vines and melts ice. Costs mana."},
+      "learn": "relic",
+      "learned_from": {"de": "Hinter dem brüchigen Stein der Ruinen.", "en": "Behind the brittle stone of the ruins."},
+      "color": [90, 20, 160],
+      "ages": ["hatchling", "juvenile", "adult"]
+    }
+  ]
+}

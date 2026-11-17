@@ -1,0 +1,14 @@
+{
+  "region": "elfvillage",
+  "abilities": [
+    {
+      "key": "moon_dew",
+      "name": {"de": "Mondtau", "en": "Moon Dew"},
+      "description": {"de": "Erilas Geschenk: Schlaf schenkt ihr ein Fünftel mehr Mana.",
+                      "en": "Erila's gift: sleep restores a fifth more mana."},
+      "learn": "gift",
+      "learned_from": {"de": "Die Elfen schenken ihn ihr, wenn sie Freunde geworden sind.", "en": "The elves give it to her once they are friends."},
+      "ages": ["juvenile", "adult"]
+    }
+  ]
+}

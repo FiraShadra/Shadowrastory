@@ -1,0 +1,1 @@
+this place here is owned by humans they can interact with her kindly or can try to kill she
