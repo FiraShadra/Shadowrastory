@@ -67,17 +67,28 @@ per game in `moral_values` (both visible in DB Browser for SQLite).
 ## Shadowra Modeler (her design)
 
 ```
-python model.py               # or: python main.py --editor
+python model.py               # or: python main.py --editor, or python src/shamodel/editor.py
 ```
 
-A tool to reshape Shadowra without touching code. Left side, four tabs:
+A tool to reshape Shadowra without touching code.
+
+Everything for her lives in one self-contained folder, `src/shamodel/` (her modelling kit: editor, rig, pieces,
+design file; only pygame needed, see its README). Her model is built from her drawn parts sheets in `src/shamodel/sheets/` (the main sheet, `torso.jpg` for the neck and
+chest, `wings.jpg` for a drawn wing per pose): the pieces are cut out into
+`src/shamodel/parts/` (`python src/shamodel/extract_parts.py` redoes that after a sheet changes) and turned
+at their joints for every pose (`src/shamodel/rig.py`). The close-up uses the sheet's front heads (blinking, smiling,
+talking). The older model drawn in code can still be chosen in the Parts tab.
+
+Left side, four tabs:
 
 - **Shape**: sliders for overall size, body, chest, head, snout, eyes, neck, horns (length, thickness, angle, curve),
   legs, tail, wings, spikes, frills, scale size and how strongly the scales shine.
 - **Colours**: body, belly, spikes, wings, horns, claws, outline (RGB, brightness, palette; belly and spikes can follow
   the body colour automatically).
-- **Parts**: switch body parts on/off (horns, frills, spikes, plates, fangs, wings, tail spade, scales, shine, ...)
-  and set how many spikes, spines, frills and toes she has.
+- **Parts**: choose the model (drawn sheet or drawn in code). Sheet model: pick which piece fills each slot
+  (side or 3/4 head, five front legs, three hind legs, three tails), wings and shine on/off, and fine-tune every
+  piece (move, turn, size) so the joints sit just right. Code model: switch body parts on/off and set how many
+  spikes, spines, frills and toes she has.
 - **Extras**: add parts of your own: spike, horn, fin, oval (plate/mark), whisker, gem. Each sits on an anchor
   (head, neck, back, chest, hips, middle or tip of the tail), so it moves with her in every pose. Drag it in the
   preview, or set position, size, length, angle, bend, colour, layer (behind / front / top) and an optional darker
@@ -86,9 +97,9 @@ A tool to reshape Shadowra without touching code. Left side, four tabs:
 Right side: live preview at every stage and pose (side view or close-up portrait), an in-game-size inset, and a
 test light that follows the mouse (torch, lava, magic, moon), so you can see the scales shine.
 
-**Save** (Ctrl+S) writes `data/shadowra_design.json`; the game uses it from the next start (a copy next to the
+**Save** (Ctrl+S) writes `src/shamodel/shadowra_design.json`; the game uses it from the next start (a copy next to the
 built game overrides the bundled one, like `morals.json`). **Export** (Ctrl+E) also saves, then writes
-`exports/<name>_<date>/` with `design.json`, a PNG of every pose for every stage, a sprite sheet and the portraits.
+`src/shamodel/exports/<name>_<date>/` with `design.json`, a PNG of every pose for every stage, a sprite sheet and the portraits.
 Other keys: Ctrl+Z / Ctrl+Y undo / redo, Space animate, F flip, arrow keys nudge the selected extra part,
 mouse wheel zooms the preview. Extra parts show in the side view only (not in the front-facing close-up).
 

@@ -8,7 +8,8 @@ from .settings import (TILE, SCREEN_W, SCREEN_H, ROCK, ROCK_DARK, ROCK_EDGE, ROC
                        CAVE_BG, LIGHT_COL, LAVA_COL)
 
 # Creature models live in models.py (supersampled, smooth). Re-exported here for existing callers.
-from . import tilegen, lights
+from . import tilegen
+from .shamodel import lights
 from .models import (draw_dragon, draw_elf, draw_moss_runner, draw_fish, draw_owl,  # noqa: F401
                      draw_monster, draw_mafor, ground_shadow)
 

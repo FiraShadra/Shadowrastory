@@ -1,21 +1,28 @@
 """Shadowra's design: sizes, colours, which body parts she has and extra parts added in the editor.
 
-The design lives in data/shadowra_design.json (edit it with `python main.py --editor`). A copy next to the
-built game (data/shadowra_design.json beside the .exe / .AppImage) overrides the bundled one, like morals.json.
+The design lives in shadowra_design.json in this folder (edit it with `python editor.py`). The game also looks
+for data/shadowra_design.json next to the built game first (it adds that to OVERRIDE_PATHS), like morals.json.
 Anything missing from the file falls back to DEFAULT, so old or hand-written files keep working.
 """
 import copy
 import json
 import os
 
-from .settings import ROOT, GAME_DIR
-
-DESIGN_FILE = os.path.join(ROOT, "data", "shadowra_design.json")
-_OVERRIDE = os.path.join(GAME_DIR, "data", "shadowra_design.json")
+HERE = os.path.dirname(os.path.abspath(__file__))
+DESIGN_FILE = os.path.join(HERE, "shadowra_design.json")
+# other places a design may come from first (the game adds data/shadowra_design.json next to the built game)
+OVERRIDE_PATHS = []
 
 DEFAULT = {
     "version": 1,
     "name": "Shadowra",
+    # "cutout": built from the drawn pieces of her parts sheet (rig.py); "drawn": drawn in code (render.py)
+    "model": "cutout",
+    # which sheet piece fills each slot of the cutout rig (see cutout.CHOICES)
+    "cutout": {"head": "head_side", "front_leg": "leg_1", "hind_leg": "leg_6", "tail": "tail_spiny",
+               "wing": "states", "neck": "neck_a", "chest": "none"},
+    # fine-tuning per cutout piece: move (dx, dy in model units), turn (rot, degrees), size (scale)
+    "rig": {},
     # every size is a multiplier: 1.0 = her standard look
     "sizes": {
         "overall": 1.0, "head": 1.0, "snout": 1.0, "eye": 1.0,
@@ -87,7 +94,7 @@ def normalize(d):
 
 
 def load(path=None):
-    for p in ([path] if path else [_OVERRIDE, DESIGN_FILE]):
+    for p in ([path] if path else OVERRIDE_PATHS + [DESIGN_FILE]):
         if p and os.path.exists(p):
             try:
                 with open(p, encoding="utf-8") as f:

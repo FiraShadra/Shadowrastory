@@ -34,7 +34,9 @@ PY="$BUILD/venv/bin/python"
 # ---- 2. Freeze the game (one folder; the AppImage itself is the single file) --------------
 echo "==> PyInstaller"
 DATA_ARGS=(--add-data "$ROOT/assets:assets" --add-data "$ROOT/data:data"
-           --add-data "$ROOT/src/controls/xheats.json:src/controls")
+           --add-data "$ROOT/src/controls/xheats.json:src/controls"
+           --add-data "$ROOT/src/shamodel/parts:src/shamodel/parts"
+           --add-data "$ROOT/src/shamodel/shadowra_design.json:src/shamodel")
 while IFS= read -r f; do
     rel="$(dirname "${f#$ROOT/}")"
     DATA_ARGS+=(--add-data "$f:$rel")

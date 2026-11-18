@@ -1,6 +1,17 @@
 {
   "version": 1,
   "name": "Shadowra",
+  "model": "cutout",
+  "cutout": {
+    "head": "head_side",
+    "front_leg": "leg_1",
+    "hind_leg": "leg_6",
+    "tail": "tail_spiny",
+    "wing": "states",
+    "neck": "neck_a",
+    "chest": "none"
+  },
+  "rig": {},
   "sizes": {
     "overall": 1.0,
     "head": 1.0,

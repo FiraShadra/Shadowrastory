@@ -10,7 +10,8 @@ from .assets import Sprites
 from .render import TileArt, Backdrop
 from .play import Play
 from .scenes import Title, Pause, Ending
-from . import lights, morals, save, texts
+from . import morals, save, texts
+from .shamodel import lights
 
 
 class Game:
@@ -87,8 +88,8 @@ class Game:
 
 
 def main():
-    if "--editor" in sys.argv:                       # the Shadowra Modeler lives in model.py (project root)
-        from model import main as editor_main
+    if "--editor" in sys.argv:                       # the Shadowra Modeler (src/shamodel/editor.py)
+        from .shamodel.editor import main as editor_main
         editor_main()
         return
     Game(dev="--dev" in sys.argv).run()
