@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "name": "Shadowra",
+  "sizes": {
+    "overall": 1.0,
+    "head": 1.0,
+    "snout": 1.0,
+    "eye": 1.0,
+    "horn_length": 1.0,
+    "horn_thickness": 1.0,
+    "horn_angle": 0.0,
+    "horn_curve": 1.0,
+    "neck_length": 1.0,
+    "neck_thickness": 1.0,
+    "body_length": 1.0,
+    "body_height": 1.0,
+    "chest": 1.0,
+    "leg_length": 1.0,
+    "leg_thickness": 1.0,
+    "tail_length": 1.0,
+    "tail_thickness": 1.0,
+    "wing": 1.0,
+    "spikes": 1.0,
+    "frills": 1.0,
+    "scales": 1.0,
+    "shine": 1.0
+  },
+  "colors": {
+    "body": [
+      86,
+      56,
+      88
+    ],
+    "belly": null,
+    "spikes": null,
+    "wing": [
+      66,
+      42,
+      70
+    ],
+    "horn": [
+      228,
+      208,
+      170
+    ],
+    "claw": [
+      226,
+      214,
+      190
+    ],
+    "outline": [
+      22,
+      12,
+      26
+    ]
+  },
+  "parts": {
+    "horns": true,
+    "far_horn": true,
+    "horn_rings": true,
+    "ear_frills": true,
+    "crest_spike": true,
+    "back_spikes": true,
+    "neck_spines": true,
+    "tail_spines": true,
+    "throat_plates": true,
+    "belly_plates": true,
+    "toes": true,
+    "fangs": true,
+    "smile": true,
+    "brow": true,
+    "wings": true,
+    "muscles": true,
+    "tail_spade": false,
+    "scales": true,
+    "sheen": true
+  },
+  "counts": {
+    "back_spikes": 7,
+    "neck_spines": 4,
+    "tail_spines": 5,
+    "ear_frills": 3,
+    "toes": 3
+  },
+  "custom": []
+}

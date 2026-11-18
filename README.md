@@ -64,6 +64,34 @@ Extra morals live in **`data/morals.json`**. Add an entry to `"morals"` and rest
 The definitions are copied into the database table `moral_defs` at every start; Shadowra's values are saved
 per game in `moral_values` (both visible in DB Browser for SQLite).
 
+## Shadowra Modeler (her design)
+
+```
+python model.py               # or: python main.py --editor
+```
+
+A tool to reshape Shadowra without touching code. Left side, four tabs:
+
+- **Shape**: sliders for overall size, body, chest, head, snout, eyes, neck, horns (length, thickness, angle, curve),
+  legs, tail, wings, spikes, frills, scale size and how strongly the scales shine.
+- **Colours**: body, belly, spikes, wings, horns, claws, outline (RGB, brightness, palette; belly and spikes can follow
+  the body colour automatically).
+- **Parts**: switch body parts on/off (horns, frills, spikes, plates, fangs, wings, tail spade, scales, shine, ...)
+  and set how many spikes, spines, frills and toes she has.
+- **Extras**: add parts of your own: spike, horn, fin, oval (plate/mark), whisker, gem. Each sits on an anchor
+  (head, neck, back, chest, hips, middle or tip of the tail), so it moves with her in every pose. Drag it in the
+  preview, or set position, size, length, angle, bend, colour, layer (behind / front / top) and an optional darker
+  copy on her far side. Delete removes it.
+
+Right side: live preview at every stage and pose (side view or close-up portrait), an in-game-size inset, and a
+test light that follows the mouse (torch, lava, magic, moon), so you can see the scales shine.
+
+**Save** (Ctrl+S) writes `data/shadowra_design.json`; the game uses it from the next start (a copy next to the
+built game overrides the bundled one, like `morals.json`). **Export** (Ctrl+E) also saves, then writes
+`exports/<name>_<date>/` with `design.json`, a PNG of every pose for every stage, a sprite sheet and the portraits.
+Other keys: Ctrl+Z / Ctrl+Y undo / redo, Space animate, F flip, arrow keys nudge the selected extra part,
+mouse wheel zooms the preview. Extra parts show in the side view only (not in the front-facing close-up).
+
 ## Where things live
 
 | File | What |

@@ -10,7 +10,7 @@ from .assets import Sprites
 from .render import TileArt, Backdrop
 from .play import Play
 from .scenes import Title, Pause, Ending
-from . import morals, save, texts
+from . import lights, morals, save, texts
 
 
 class Game:
@@ -75,6 +75,7 @@ class Game:
         self.scene.update(dt, self.ctl)
         self.shake = max(0.0, self.shake - dt)
         self.shake_off = ((random.uniform(-6, 6), random.uniform(-6, 6)) if self.shake > 0 else (0, 0))
+        lights.new_frame()
         self.scene.draw(self.screen)
 
     def run(self):
@@ -86,4 +87,8 @@ class Game:
 
 
 def main():
+    if "--editor" in sys.argv:                       # the Shadowra Modeler lives in model.py (project root)
+        from model import main as editor_main
+        editor_main()
+        return
     Game(dev="--dev" in sys.argv).run()

@@ -6,7 +6,7 @@ import pygame
 
 from .settings import (TILE, SCREEN_W, SCREEN_H, SUN_DMG, LAVA_LIGHT_DMG, TORCH_DMG, VEIL_DRAIN_SUN,
                        VEIL_DRAIN_LAVA, VEIL_DRAIN_TORCH, VEIL_EMPTY_DMG, GROWTH_NEED, STAGES,
-                       TEXT, TEXT_DIM, LIGHT_COL, SPIKE_DMG, FIRE_DPS, DAY_DMG, VEIL_DRAIN_DAY,
+                       TEXT, TEXT_DIM, LIGHT_COL, LAVA_COL, SPIKE_DMG, FIRE_DPS, DAY_DMG, VEIL_DRAIN_DAY,
                        SHRINE_EXPOSURE_RATE, SHRINE_DMG)
 from .world import Level, X, GROVE, LAVA, MEADOW, PLATEAU, VALE, VALE_W, SHADOW_STONES
 from .player import Player
@@ -1389,10 +1389,10 @@ class Play:
             render.ground_shadow(screen, p.cx - cam[0], p.feet - cam[1], p.w * 1.7)
         # faint aura so a dark dragon stays readable in dark caves
         render.draw_light_circle(screen, p.cx - cam[0], p.cy - cam[1] - p.h * 0.2,
-                                 int(max(p.w, p.h) * 1.3), col=(150, 110, 190), alpha=45)
+                                 int(max(p.w, p.h) * 1.3), col=(150, 110, 190), alpha=45, shine=False)
         render.draw_dragon(screen, p.cx - cam[0], p.feet - cam[1], p.stage, p.facing, pose, p.anim_t,
                            eye=self.morality.eye_color(), obsidian="obsidian" in p.abilities,
-                           tint=tint, flap=p.flap_anim)
+                           tint=tint, flap=p.flap_anim, extra_lights=self.world_lights(p.cx, p.cy, cam))
         lit = (self.level.sun_at(p.cx, p.cy, self.t) or self.level.lava_light_at(p.cx, p.cy)
                or self.level.sunlit(p.cx, p.cy, self.t))
         if "veil" in p.abilities and lit and p.mana > 0:
@@ -1402,6 +1402,19 @@ class Play:
         if p.exhausted > 0 and int(p.anim_t * 3) % 2 == 0:
             hx = p.cx + p.facing * p.w * 0.6 - cam[0]
             pygame.draw.circle(screen, (200, 200, 210), (int(hx), int(p.y + p.h * 0.4 - cam[1])), 3)
+
+    def world_lights(self, wx, wy, cam):
+        """Light that isn't drawn as a glow but should still make dragon scales shine (screen space):
+        a sunbeam or open daylight from above, the glow of lava from below."""
+        x, y = wx - cam[0], wy - cam[1]
+        out = []
+        if self.level.sun_at(wx, wy, self.t):
+            out.append((x + 30, y - 150, 160, LIGHT_COL, 1.0))
+        elif self.day_mix > 0.01 and self.level.sunlit(wx, wy, self.t):
+            out.append((x - 90, y - 170, 180, (255, 236, 170), 0.8 * self.day_mix))
+        if self.lava_mix > 0.01 and self.level.lava_light_at(wx, wy):
+            out.append((x + 20, y + 110, 130, LAVA_COL, 0.9 * self.lava_mix))
+        return out
 
     def draw_creature(self, screen, c, cam):
         if c.alive and c.gravity and c.on_ground and c.kind != "fira":     # soft contact shadow
@@ -1448,7 +1461,7 @@ class Play:
                 render.ground_shadow(screen, c.cx - cam[0], c.y + c.h - cam[1], 90)
             render.draw_dragon(screen, c.cx - cam[0], c.y + c.h - cam[1], 2, c.facing, c.pose, c.anim_t,
                                eye=(255, 190, 60), body=(150, 66, 40), horn=(70, 40, 30), scale_mult=0.9,
-                               flap=(c.anim_t * 2.4 % 1) * 0.35)
+                               flap=(c.anim_t * 2.4 % 1) * 0.35, extra_lights=self.world_lights(c.cx, c.cy, cam))
         elif c.kind in ("priest", "skeleton", "skull", "vampire"):
             if c.kind == "priest" and c.alive:              # torch light behind the priest
                 L = c.light()

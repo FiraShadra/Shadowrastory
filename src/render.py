@@ -8,7 +8,7 @@ from .settings import (TILE, SCREEN_W, SCREEN_H, ROCK, ROCK_DARK, ROCK_EDGE, ROC
                        CAVE_BG, LIGHT_COL, LAVA_COL)
 
 # Creature models live in models.py (supersampled, smooth). Re-exported here for existing callers.
-from . import tilegen
+from . import tilegen, lights
 from .models import (draw_dragon, draw_elf, draw_moss_runner, draw_fish, draw_owl,  # noqa: F401
                      draw_monster, draw_mafor, ground_shadow)
 
@@ -336,7 +336,10 @@ def draw_daylight(screen, level, cam, t, sprites):
 _glow_cache = {}
 
 
-def draw_light_circle(screen, x, y, r, col=LIGHT_COL, alpha=70):
+def draw_light_circle(screen, x, y, r, col=LIGHT_COL, alpha=70, shine=True):
+    """A soft glow. shine=False: it lights nothing else (e.g. Shadowra's own faint aura)."""
+    if shine:
+        lights.add(x, y, r, col, alpha / 70)
     key = (r, col, alpha)
     surf = _glow_cache.get(key)
     if surf is None:
